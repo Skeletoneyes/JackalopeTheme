@@ -1,0 +1,577 @@
+/*
+Theme Name:     JackalopeTheme
+Theme URI:      http://www.jackalopegames.com
+Description:    Child theme for toolbox
+Author:         Joshua Mohan
+Author URI:     http://www.jackalopegames.com
+Template:       toolbox
+Version:        0.1.0
+*/
+
+@import url('../toolbox/style.css');
+
+
+/*
+	CSS Reset
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+	background-color: #fefefe;
+}
+
+img, a:hover {
+	-webkit-transition: all 0.2s ease-out 0;
+	-moz-transition: all 0.2s ease-out 0;
+}
+
+/***************************************************************************************************
+
+The static parts of the page
+
+***************************************************************************************************/
+
+@font-face
+{
+font-family:bigTitle;
+src: url('fonts/American Purpose.ttf');
+}
+
+@font-face {
+    font-family: 'Vegur';
+    src: url('fonts/vegur-light.eot');
+    src: url('fonts/vegur-light.eot?#iefix') format('embedded-opentype'),
+         url('fonts/vegur-light.woff') format('woff'),
+         url('fonts/vegur-light.ttf') format('truetype'),
+         url('fonts/vegur-light.otf') format('opentype'),
+         url('fonts/vegur-light.svg#VegurLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vegur';
+    src: url('fonts/vegur-bold.eot');
+    src: url('fonts/vegur-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/vegur-bold.woff') format('woff'),
+         url('fonts/vegur-bold.ttf') format('truetype'),
+         url('fonts/vegur-bold.otf') format('opentype'),
+         url('fonts/vegur-bold.svg#VegurBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1, h2, a, p, span, li {
+	font-family: "Vegur", sans-serif;
+	text-transform: none;
+	font-size: 18px;
+}
+
+p {
+	margin-bottom: 14px;
+}
+
+#access {
+	background: transparent;
+	margin-bottom: 0;
+}
+
+#access li:hover > a,
+#access ul ul :hover > a, 
+#access ul ul a:hover,
+#access ul li:hover > ul,
+#access ul li a,
+.menu *
+{
+	background: transparent;
+}
+
+#access a {
+	color: black;
+	text-shadow: rgba(40,40,40,1) 0px 0px 1px;
+}
+
+#access a:hover {
+	color: #666;
+	text-shadow: rgba(40,40,40,0.5) 0px 0px 1px;
+}
+
+#access ul li {
+	height: 50px;
+}
+
+#access ul li a {
+	margin: auto 1.5em auto 0;
+	font-size: 22px;
+	padding: 0;
+}
+
+#content, #margin, #main, #page, html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/*#branding, #main {*/
+body {
+	background-image:url('bg-image.png');
+	background-repeat:repeat-x;
+	height: 172px;
+}
+
+#page {
+
+}
+
+#pagewrapper {
+	width: 925px;
+	margin: 0 auto;
+}
+
+#branding {
+	float: left;
+	clear: right;
+	width: 100%;
+}
+
+#site-title,
+#site-description {
+	color: white;
+}
+
+#site-title a,
+#site-description a{
+	color: white;
+	text-decoration: none;
+}
+
+#site-title {
+	text-shadow: rgba(40,40,40,1) 1px 1px 1px;
+	margin: 0px 0 0;
+	float: left;
+	width: 100px;
+	padding-right:207px;
+}
+
+#site-title a:hover {
+	color: #eee;
+	text-shadow: rgba(40,40,40,0.5) 1px 1px 1px;
+}
+
+#site-title p{
+	font-family: bigTitle;
+	margin: 18px 0;
+	width: 100px;
+	line-height: 40px;
+	font-weight: bold;
+	font-size: 50px;
+}
+
+#site-title p:first-letter{
+	font-size: 120%;
+}
+
+#site-description {
+	float: left;
+	width: 400px;
+	margin: 13px 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	font-size: 18px;
+	line-height: 20px;
+	color: #eee;
+}
+
+#access ul{
+	text-align:center;
+	padding-left: 307px;
+	height: 50px;
+}
+
+#main {
+	float: left;
+		width: 100%;
+}
+
+/***************************************************************************************************
+
+Dynamic content (posts)
+
+***************************************************************************************************/
+
+.post.first {
+	/* margin: 0 12px 20px 12px; */
+}
+
+.post {
+	float:left;
+	width: 279px;
+	height: 175px;
+	/* margin: 0 12px 20px 0; */
+	padding: 0 0 30px 0;
+	margin: 0 28px 15px 0;
+	border-bottom: 1px solid #666;
+}
+
+.post p, .post-tags {
+	margin-top: 5px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	color: #666;
+	font-weight: bold;
+}
+
+.post-tags
+{
+	font-weight: normal;
+}
+
+.postimg {
+	margin-bottom: 25px;
+}
+
+.postimg{
+	height: 130px;
+	padding:5px;
+	border:rgba(214,229,200,0.5) 1px solid;
+	/*
+	-moz-box-shadow:1px 1px 1px #999;
+	-webkit-box-shadow:1px 1px 1px #999;
+	box-shadow:1px 1px 1px #999;*/
+	-webkit-box-shadow: 1px 1px 3px rgba(69,115,131,0.55);
+    -moz-box-shadow: 1px 1px 3px rgba(69,115,131,0.55);
+    box-shadow: 1px 1px 3px rgba(69,115,131,0.55);
+}
+
+.postimg:hover{
+	border:rgba(69,115,131,0.25) 1px solid;
+	margin: 1px 0 24px 0px;
+	-webkit-box-shadow: 0px 1px 1px rgba(69,115,131,0.55);
+    -moz-box-shadow: 0px 1px 1px rgba(69,115,131,0.55);
+    box-shadow: 0px 1px 1px rgba(69,115,131,0.55);
+}
+
+.postimg:hover img{
+	opacity: .75;
+}
+
+.categorytitle {
+	font-weight: normal;
+	margin: 0px 0 10px;
+	padding: 10px 0 0;
+	border: 0;
+	font-size: 1.3em;
+	color: #666;
+}
+
+/***************************************************************************************************
+
+Style for single posts
+
+***************************************************************************************************/
+
+.home #content .post .entry-meta,
+.archive #content .post .entry-meta,
+.search #content .post .entry-meta {
+	margin-bottom:18px;
+	letter-spacing:1px;
+}
+
+.clear {
+	clear:both;
+}
+
+.game {
+	padding: 10px;
+	border:rgba(69,115,131,0.25) 1px solid;
+	margin: 1px 0 24px 0px;
+	-webkit-box-shadow: 0px 1px 1px rgba(69,115,131,0.55);
+    -moz-box-shadow: 0px 1px 1px rgba(69,115,131,0.55);
+    box-shadow: 0px 1px 1px rgba(69,115,131,0.55);
+}
+
+.single #main {
+	/*border-left: 1px solid #666;
+	-moz-box-shadow:2px 3px 5px #999;
+	-webkit-box-shadow:2px 3px 5px #999;
+	box-shadow:2px 3px 5px #999;*/
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+    -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+	background-color: #fff;
+}
+
+#content .entry-header .entry-meta {
+	clear: none;
+}
+
+#container {
+	width:100%;
+	margin:0 auto;
+	margin-bottom:20px;
+}
+
+.home #container {
+	padding-top:30px;
+	border-top:#CCC 1px solid;
+}
+
+#content {
+	width:100%;
+	/*margin: 20px 20px auto 0;*/
+}
+
+.home #content .post,
+.archive #content .post,
+.search #content .post {
+	position:relative;
+	border-bottom:#CCC 1px solid;
+}
+
+.home #content .post .entry-meta,
+.archive #content .post .entry-meta,
+.search #content .post .entry-meta {
+	margin-bottom:18px;
+	letter-spacing:1px;
+}
+
+.single .entry-header {
+	margin:20px 0;
+}
+
+.single-format-image .entry-header,
+.single-format-gallery .entry-header,
+.single-format-audio .entry-header,
+.single-format-video .entry-header {
+	float:right;
+	width:220px;
+}
+
+.single .wp-post-image {
+	float:right;
+	padding:5px;
+	margin: 0 70px 0;
+	border:#CCC 1px solid;
+	/*
+	-moz-box-shadow:1px 1px 1px #999;
+	-webkit-box-shadow:1px 1px 1px #999;
+	box-shadow:1px 1px 1px #999;*/
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+    -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+}
+
+.single-format-image .wp-post-image,
+.single-format-audio .wp-post-image {
+	float:none;
+	margin-bottom:25px;
+}
+
+.single .entry-meta {
+	float:left;
+	margin-left: 20px;
+	line-height:36px;
+	overflow:hidden;
+}
+
+.single .entry-content {
+	margin-left: 20px;
+	font-weight: normal;
+	line-height: 18px;
+}
+
+.home #content .post .entry-meta,
+.archive #content .post .entry-meta,
+.search #content .post .entry-meta {
+	margin-bottom:18px;
+	letter-spacing:1px;
+}
+
+.single .entry-meta ul {
+	list-style:none;
+	margin:0;
+}
+
+.single .entry-meta ul li {
+	margin:0;
+	border-bottom:#CCC 1px dotted;
+}
+
+.attachment .entry-content,
+.format-image .entry-content {
+	margin-bottom:20px;
+	border-bottom:#CCC 1px solid;
+}
+
+.entry-attachment {
+	margin-bottom:18px;
+	text-align:center;
+}
+
+.format-audio .entry-attachment {
+	text-align:left;
+}
+
+.entry-attachment img,
+#attachment-nav img {
+	float:none !important;
+	padding:5px;
+	border:#CCC 1px solid;
+	/*
+	-moz-box-shadow:0 0 10px #999;
+	-webkit-box-shadow:0 0 10px #999;
+	box-shadow:0 0 10px #999;*/
+   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+    -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+}
+
+.entry-caption {
+	text-align:center;
+}
+
+.post-gallery {
+	margin:auto;
+}
+
+.post-gallery .gallery-item {
+	float:left;
+	margin:10px 0 20px 20px;
+	text-align:center;
+	width:220px;
+}
+
+.post-gallery .gallery-item:first-child {
+	margin-left:0;
+}
+
+.post-gallery img {
+	border:#CCC 1px solid;
+	/*
+	-moz-box-shadow:0px 0px 5px #999;
+	-webkit-box-shadow:0px 0px 5px #999;
+	box-shadow:0 0 5px #999; */
+	
+   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+    -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.55);
+}
+
+.post-gallery .gallery-caption {
+	margin-left:0;
+}
+
+#attachment-nav {
+	float:right;
+	width:460px;
+}
+
+.title-container {
+	margin:30px 0 0 -10px;
+	padding:20px 0px 4px 0px;
+	background:#457383;
+	border-top: 2px solid #838f85;
+	border-bottom: 2px solid #838f85;
+	width: 945px;
+/*    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;*/
+    -webkit-box-shadow: 0px 3px 0px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 0px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 0px -1px rgba(0,0,0,0.75);
+}
+
+.title-container h1.entry-title {
+	font-family: bigTitle;
+	text-align: center;
+	color: #fff;
+	font-size: 72px;
+	font-weight: bold;
+	clear: none;
+	text-shadow: rgba(30,30,30,0.7) 1px 1px;
+}
+
+.triangle {
+	position: relative;
+	height: 0px;
+	width: 0px;
+	margin: -10px 0 0;
+	z-index: -1;
+}
+
+.triangle.left {
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent; 
+        border-left: 10px solid transparent; 
+        border-right: 10px solid #333;
+        
+        float: left;
+        margin-left: -20px;
+		
+}
+
+.triangle.right {
+	    border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right:10px solid transparent;
+        border-left: 10px solid #333;
+        
+         float: right;
+         margin-right: -20px; 
+}
+
+.page-title,
+.single .entry-title,
+.page .entry-title {
+	margin:0 25px;
+	color:#FFF;
+	font-size:48px;
+	line-height:48px;
+}
+
+/* ENTRY TAGS
+******************
+*/
+
+.entry-tags {
+	line-height:16px;
+	border-bottom:#CCC 1px dotted;
+}
+
+.entry-tags a {
+	position:relative;
+	display:inline-block;
+	padding:1px 15px 1px 5px;
+	margin:10px 0;
+	background:#CCC url(images/tag.png) right no-repeat;
+	color:#000;
+	font-size:14px;
+	text-decoration:none;
+}
+
+
+#wrapper img {
+	max-width:700px;
+	height:auto;
+}
